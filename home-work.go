@@ -7,6 +7,9 @@ import (
 )
 
 func average(arr []int) float64 { // Task 1
+	if len(arr) == 0 {
+		return 0
+	}
 	sum := 0
 	for _, a := range arr {
 		sum += a
@@ -48,6 +51,7 @@ func printSorted(m map[int]string) { // Task 3
 func main() {
 	fmt.Println("\t\t\tTask #1\t\t\t")
 	fmt.Println(average([]int{1,2,3,4,5,6}))
+	fmt.Println(average([]int{}))
 
 	aw := []int{1,1,1,1,1,3,3,3,3,3}
 	fmt.Println(average(aw))
