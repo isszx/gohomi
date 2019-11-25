@@ -40,15 +40,14 @@ func reverse(arr []int64) []int64 { // Task 2.2
 
 func printSorted(m map[int]string) { // Task 3
 	var tmp []int
-	var res []string
 	for k := range m {
 		tmp = append(tmp, k)
 	}
 	sort.Ints(tmp)
 	for _, v := range tmp {
-		res = append(res, m[v])
+		fmt.Printf("%s ", m[v])
 	}
-	fmt.Println(res)
+	fmt.Println()
 }
 
 func main() {
