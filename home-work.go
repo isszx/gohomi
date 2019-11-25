@@ -28,11 +28,14 @@ func max(words []string) string { // Task 2.1
 }
 
 func reverse(arr []int64) []int64 { // Task 2.2
-	ar := append(arr, 0)
-	for i, j := 0, len(ar) - 1; i < len(ar) / 2; i, j = i + 1, j - 1 {
-		ar[i], ar[j] = ar[j], ar[i]
+	newSlice := make([]int64, len(arr))
+	for i, a := range arr {
+		newSlice[i] = a
 	}
-	return ar[1:]
+	for i, j := 0, len(newSlice) - 1; i < len(newSlice) / 2; i, j = i + 1, j - 1 {
+		newSlice[i], newSlice[j] = newSlice[j], newSlice[i]
+	}
+	return newSlice
 }
 
 func printSorted(m map[int]string) { // Task 3
