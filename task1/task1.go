@@ -52,11 +52,11 @@ func (s *server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	rJson, err := json.Marshal(resp)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		log.Panic(err)
+		log.Println(err)
+    w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte(err.Error()))
 		return
 	}
-
 	w.Header().Set("Content-Type", "application/json")
 	w.Write(rJson)
 }
