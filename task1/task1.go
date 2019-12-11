@@ -50,10 +50,11 @@ func (s *server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		},
 		Querys: qr,
 	}
+
 	rJson, err := json.Marshal(resp)
 	if err != nil {
 		log.Println(err)
-    w.WriteHeader(http.StatusInternalServerError)
+		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte(err.Error()))
 		return
 	}
