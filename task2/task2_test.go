@@ -1,8 +1,9 @@
 package task2
 
 import (
-	"github.com/stretchr/testify/assert"
 	"errors"
+	"github.com/stretchr/testify/assert"
+	"strconv"
 	"testing"
 )
 
@@ -28,4 +29,16 @@ func TestSpaces(t *testing.T) {
 	r, e := StrToInt("1 2 3")
 	assert.Equal(t, 1, r, e)
 	assert.Nil(t, e, r)
+}
+
+func Benchmark_Task2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		StrToInt(strconv.Itoa(i))
+	}
+}
+
+func Benchmark_Task1(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		StrToInt0(strconv.Itoa(i))
+	}
 }

@@ -1,0 +1,6 @@
+goos: darwin
+goarch: amd64
+Benchmark_Task2-4   	 1404199	       855 ns/op
+Benchmark_Task1-4   	23116681	        51.9 ns/op
+PASS
+ok  	command-line-arguments	3.607s
